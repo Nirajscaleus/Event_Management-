@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <p>loaged in <strong>welcome <%= current_user.email %> <strong></p> 
+  <%= button_to " logout", destroy_user_session_path , method: :delete,class: "logout-btn" %>
+<% else %>
+   <%= link_to "signup", new_user_registration_path,class: "signup-btn" %>
+   <%= link_to "login", new_user_session_path,class: "login-btn" %>
+<% end %>
